@@ -760,7 +760,7 @@
     "folder": "python"
   },
   "qwen_bespoke_causal": {
-    "file_name": "bespoke_causal.jsonl",
+  "hf_hub_url": "im2735/bespoke_causal",
   "formatting": "sharegpt",
   "columns": {
     "system": "system",
