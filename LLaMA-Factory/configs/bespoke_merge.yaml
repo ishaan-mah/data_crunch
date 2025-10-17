@@ -1,0 +1,27 @@
+### Note: DO NOT use quantized model or quantization_bit when merging lora adapters
+
+### model
+# model_name_or_path: Qwen/Qwen2.5-7B-Instruct
+# adapter_name_or_path: /shared/share_mala/Ishaan/finetuned_model/LLaMA-Factory/qwen_bespoke_causal/checkpoint-825/
+# template: qwen
+# trust_remote_code: true
+
+# ### export
+# export_dir: /shared/share_mala/Ishaan/finetuned_model/LLaMA-Factory/qwen_bespoke_causal/checkpoint-825/merged
+# export_size: 4
+# export_device: cpu  # choices: [cpu, auto]
+# export_legacy_format: false
+
+### Note: DO NOT use quantized model or quantization_bit when merging lora adapters
+
+### model
+model_name_or_path: meta-llama/Meta-Llama-3.1-8B-Instruct
+adapter_name_or_path: /shared/share_mala/Ishaan/finetuned_model/LLaMA-Factory/LLaMA_causal/checkpoint-200/
+template: llama3
+trust_remote_code: true
+
+### export
+export_dir: /shared/share_mala/Ishaan/finetuned_model/LLaMA-Factory/LLaMA_causal/checkpoint-200/merged
+export_size: 4
+export_device: cpu  # choices: [cpu, auto]
+export_legacy_format: false

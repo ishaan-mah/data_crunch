@@ -1,0 +1,198 @@
+# llama-distill
+model_name_or_path: meta-llama/Meta-Llama-3.1-8B-Instruct
+output_dir: /shared/share_mala/Ishaan/finetuned_model/LLaMA-Factory/LLaMA_distill
+dataset: deepseek-r1-distilled
+template: llama3    # tells LLaMA-Factory to use Qwen’s chat formatting
+stage: sft
+do_train: true
+finetuning_type: lora
+lora_rank: 128
+lora_target: all
+# training params
+num_train_epochs: 3.0
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 12   # adjust if fewer GPUs
+learning_rate: 1e-6
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+weight_decay: 0.01
+adam_beta1: 0.9
+adam_beta2: 0.999
+adam_epsilon: 1e-08
+logging_steps: 1
+save_steps: 208
+seed: 42
+# eval
+do_eval: true
+eval_dataset: winogender  # or create a separate validation dataset
+per_device_eval_batch_size: 8
+eval_strategy: steps
+eval_steps: 1
+# hardware
+bf16: true
+ddp_find_unused_parameters: false
+report_to: wandb
+run_name: llama3_distill_new
+
+# llama_causal
+# model_name_or_path: meta-llama/Meta-Llama-3.1-8B-Instruct
+# output_dir: /shared/share_mala/Ishaan/finetuned_model/LLaMA-Factory/LLaMA_causal
+# dataset: causal
+# template: llama3    # tells LLaMA-Factory to use Qwen’s chat formatting
+# stage: sft
+# do_train: true
+# finetuning_type: lora
+# lora_rank: 128
+# lora_target: all
+# # training params
+# num_train_epochs: 3.0
+# per_device_train_batch_size: 1
+# gradient_accumulation_steps: 12   # adjust if fewer GPUs
+# learning_rate: 1e-6
+# lr_scheduler_type: cosine
+# warmup_ratio: 0.1
+# weight_decay: 0.01
+# adam_beta1: 0.9
+# adam_beta2: 0.999
+# adam_epsilon: 1e-08
+# logging_steps: 1
+# save_steps: 100
+# seed: 42
+# # eval
+# do_eval: true
+# eval_dataset: winogender  # or create a separate validation dataset
+# per_device_eval_batch_size: 8
+# eval_strategy: steps
+# eval_steps: 1
+# # hardware
+# bf16: true
+# ddp_find_unused_parameters: false
+# report_to: wandb
+# run_name: llama3_causal_new
+
+# llama_distill_causal
+# model_name_or_path: meta-llama/Meta-Llama-3.1-8B-Instruct
+# output_dir: /shared/share_mala/Ishaan/finetuned_model/LLaMA-Factory/LLaMA_distill_causal
+# dataset: distill_causal
+# template: llama3    
+# stage: sft
+# do_train: true
+# finetuning_type: lora
+# lora_rank: 128
+# lora_target: all
+# # training params
+# num_train_epochs: 1.25
+# per_device_train_batch_size: 1
+# gradient_accumulation_steps: 12   # adjust if fewer GPUs
+# learning_rate: 1e-6
+# lr_scheduler_type: cosine
+# warmup_ratio: 0.1
+# weight_decay: 0.01
+# adam_beta1: 0.9
+# adam_beta2: 0.999
+# adam_epsilon: 1e-08
+# logging_steps: 1
+# save_steps: 386
+# seed: 42
+# # eval
+# # do_eval: true
+# # eval_dataset: winogender  # or create a separate validation dataset
+# # per_device_eval_batch_size: 8
+# # eval_strategy: steps
+# # eval_steps: 1
+# # predict_with_generate: true
+# # hardware
+# bf16: true
+# ddp_find_unused_parameters: false
+# report_to: wandb
+# run_name: llama3_distill_causal_final
+
+# qwen_bespoke
+# model_name_or_path: Qwen/Qwen2.5-7B-Instruct
+# output_dir: /shared/share_mala/Ishaan/finetuned_model/LLaMA-Factory/qwen_bespoke
+# dataset: Bespoke-Stratos-17k
+# template: qwen    # tells LLaMA-Factory to use Qwen’s chat formatting
+# stage: sft
+# do_train: true
+# finetuning_type: lora
+# lora_rank: 8
+# lora_target: all
+# # training params
+# num_train_epochs: 3.0
+# per_device_train_batch_size: 1
+# gradient_accumulation_steps: 12   # adjust if fewer GPUs
+# learning_rate: 1e-5
+# lr_scheduler_type: cosine
+# warmup_ratio: 0.1
+# weight_decay: 0.0
+# adam_beta1: 0.9
+# adam_beta2: 0.999
+# adam_epsilon: 1e-08
+# logging_steps: 1
+# save_steps: 175
+# seed: 42
+# # hardware
+# bf16: true
+# ddp_find_unused_parameters: false
+# report_to: wandb
+# run_name: qwen_bespoke
+
+# qwen_causal
+# model_name_or_path: Qwen/Qwen2.5-7B-Instruct
+# output_dir: /shared/share_mala/Ishaan/finetuned_model/LLaMA-Factory/qwen_causal
+# dataset: causal
+# template: qwen    # tells LLaMA-Factory to use Qwen’s chat formatting
+# stage: sft
+# do_train: true
+# finetuning_type: lora
+# lora_rank: 8
+# lora_target: all
+# # training params
+# num_train_epochs: 3.0
+# per_device_train_batch_size: 1
+# gradient_accumulation_steps: 12   # adjust if fewer GPUs
+# learning_rate: 1e-5
+# lr_scheduler_type: cosine
+# warmup_ratio: 0.1
+# weight_decay: 0.0
+# adam_beta1: 0.9
+# adam_beta2: 0.999
+# adam_epsilon: 1e-08
+# logging_steps: 1
+# save_steps: 100
+# seed: 42
+# # hardware
+# bf16: true
+# ddp_find_unused_parameters: false
+# report_to: wandb
+# run_name: qwen_causal
+
+# qwen_bespoke_causal
+# model_name_or_path: Qwen/Qwen2.5-7B-Instruct
+# output_dir: /shared/share_mala/Ishaan/finetuned_model/LLaMA-Factory/qwen_bespoke_causal
+# dataset: qwen_bespoke_causal
+# template: qwen    # tells LLaMA-Factory to use Qwen’s chat formatting
+# stage: sft
+# do_train: true
+# finetuning_type: lora
+# lora_rank: 8
+# lora_target: all
+# # training params
+# num_train_epochs: 3.0
+# per_device_train_batch_size: 1
+# gradient_accumulation_steps: 12   # adjust if fewer GPUs
+# learning_rate: 1e-5
+# lr_scheduler_type: cosine
+# warmup_ratio: 0.1
+# weight_decay: 0.0
+# adam_beta1: 0.9
+# adam_beta2: 0.999
+# adam_epsilon: 1e-08
+# logging_steps: 1
+# save_steps: 275
+# seed: 42
+# # hardware
+# bf16: true
+# ddp_find_unused_parameters: false
+# report_to: wandb
+# run_name: qwen_bespoke_causal

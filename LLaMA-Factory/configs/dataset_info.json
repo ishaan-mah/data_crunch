@@ -1,0 +1,17 @@
+{
+    "Bespoke-Stratos-17k": {
+    "hf_hub_url": "bespokelabs/Bespoke-Stratos-17k",
+    "formatting": "sharegpt",
+    "columns": {
+      "system": "system",
+      "messages": "conversations"
+    },
+    "tags": {
+        "role_tag": "from",
+        "content_tag": "value",
+        "user_tag": "user",
+        "assistant_tag": "assistant",
+        "system_tag": "system"
+    }
+  }
+}
