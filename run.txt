@@ -1,0 +1,5 @@
+1. mount the disk
+2. make env
+3. git clone
+4. install
+5. run
