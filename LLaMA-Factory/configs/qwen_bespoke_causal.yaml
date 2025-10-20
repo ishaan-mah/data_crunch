@@ -10,7 +10,7 @@ deepspeed: examples/deepspeed/ds_z2_config.json
 # training params
 num_train_epochs: 3.0
 per_device_train_batch_size: 1
-gradient_accumulation_steps: 24   # adjust if fewer GPUs
+gradient_accumulation_steps: 12   # adjust if fewer GPUs
 learning_rate: 1e-5
 lr_scheduler_type: cosine
 warmup_ratio: 0.1

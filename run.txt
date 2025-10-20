@@ -1,5 +1,6 @@
 1. mount the disk
 2. make env
 3. git clone
+uv pip install setuptools
 4. install
 5. run
