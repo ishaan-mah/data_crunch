@@ -2,5 +2,7 @@
 2. make env
 3. git clone
 uv pip install setuptools
-4. install
+4. install (uv pip install -e ".[torch,metrics]" --no-build-isolation)
+install wandb (login), deepspeed==0.16.2
+hf_cache
 5. run
